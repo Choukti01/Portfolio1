@@ -1,0 +1,278 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+
+body { 
+    font-family: "Poppins", sans-serif;
+    background: #002b6b; /* deep blue */
+    color: #000;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* Background canvas */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Navbar */
+nav {
+    background: rgba(169, 211, 228, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    
+   
+  color: rgb(236, 202, 139);                 /* deep-blue text on hover */
+  
+}
+
+/* Header */
+header {
+    margin-top: 5vh;
+    animation: fadeIn 2s ease;
+}
+
+
+
+
+
+.profile-wave {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 3rem auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.profile-wave .profile-img {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    box-shadow: 0 0 25px rgba(135, 206, 235, 0.4);
+}
+
+.wave-border {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #062761,
+        #68a2b6,
+        #9acaf1,
+        #c0a954,
+        #245464,
+        #0b3d91
+    );
+    filter: blur(20px);
+    z-index: 1;
+    animation: wavePulse 6s infinite linear;
+    opacity: 0.9;
+}
+
+.name {
+    font-size: 2rem;
+    color:white;
+    margin-top: 1rem;
+    animation: slideIn 2s ease;
+}
+
+.title {
+    font-size: 1.5rem;
+    color:rgb(236, 202, 139);
+    animation: fadeInUp 3s ease;
+}
+
+/* Main sections */
+main {
+    width: 75%;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    background: rgba(135, 206, 235, 0.15); /* semi-transparent skyblue */
+    border: 1px solid rgba(135, 206, 235, 0.4);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    color: #000;
+    transition: 0.3s ease;
+    /* backdrop-filter: blur(10px); glass effect */
+    transparency: 0.8;
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    color: rgb(243, 210, 148);
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 40px rgba(255, 255, 255, 0.2);
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn {
+    background: #3183cf;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #06adfa;
+    color: rgb(236, 202, 139);
+}
+
+/* Footer */
+.footr {
+    color: white;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes wavePulse {
+    0% {
+        transform: scale(1);
+        filter: blur(18px) brightness(1);
+    }
+    50% {
+        transform: scale(1.12);
+        filter: blur(25px) brightness(1.2);
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(18px) brightness(1);
+    }
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* Social links styling */
+.socials {
+  margin-top: 1rem;
+  color: rgba(234, 246, 255, 0.95);
+  font-size: 0.98rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* link base */
+.social-link {
+  color: #eaf6ff;                 /* pale sky blue */
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background .18s ease, color .18s ease, transform .12s ease;
+  display: inline-block;
+}
+
+/* hover/focus effect */
+.social-link:hover,
+.social-link:focus {
+  background: rgba(255,255,255,0.06);
+  color: rgb(5, 141, 182);                 /* deep-blue text on hover */
+  transform: translateY(-3px);
+  outline: none;
+  box-shadow: 0 6px 18px rgba(4, 106, 146, 0.18);
+}
+
+/* small separator dot spacing */
+.socials a + a { margin-left: 8px; }
+
+/* accessible focus visible */
+.social-link:focus-visible {
+  box-shadow: 0 0 0 3px rgba(135,206,235,0.18);
+}
