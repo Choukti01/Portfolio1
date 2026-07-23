@@ -224,7 +224,7 @@ console.log("app.js loaded");
 
 const canvas = document.getElementById("particles");
 const loader = document.getElementById("loader");
-const projectsContainer = document.getElementById("projectsContainer");
+
 
 const repoCount = document.getElementById("repoCount");
 const followersCount = document.getElementById("followersCount");
