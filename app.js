@@ -7,6 +7,211 @@ Version: 2.0
 */
 
 
+
+/* ==========================================================
+   PORTFOLIO PROJECTS
+========================================================== */
+
+const projects = [
+
+    {
+
+        title: "rifKANDO",
+
+        category: "Multi-Service Platform",
+
+        year: "2026",
+
+        status: "In Development",
+
+        image: "doing/images/rifkando.jpg",
+
+        description:
+            "A modern Moroccan multi-service platform connecting users with essential digital services through a clean and scalable architecture.",
+
+        technologies: [
+
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Express"
+
+        ],
+
+        github: "rifKANDO",
+
+        demo: "www.rifkando.com"
+
+    },
+
+    {
+
+        title: "FlyIn",
+
+        category: "Travel Platform",
+
+        year: "2026",
+
+        status: "Not Completed",
+
+        image: "doing/images/flyin.jpg",
+
+        description:
+            "A travel planning application helping users reach Moroccan airports using intelligent transportation suggestions.",
+
+        technologies: [
+
+            "Vue",
+            "JavaScript",
+            "CSS"
+
+        ],
+
+        github: "FlyIn",
+
+        demo: "#"
+
+    },
+
+    {
+
+        title: "NETCAFE",
+
+        category: "Cybersecurity",
+
+        year: "2026",
+
+        status: "Development",
+
+        image: "doing/images/netcafe.jpg",
+
+        description:
+            "Rust-powered cybersecurity platform focused on defensive tools and modern blue-team workflows.",
+
+        technologies: [
+
+            "Rust",
+            "React"
+
+        ],
+
+        github: "#",
+
+        demo: "#"
+
+    }
+
+];
+
+
+
+
+
+/* ==========================================================
+   BUILD PROJECT CARDS
+========================================================== */
+
+const projectsContainer =
+
+document.getElementById("projectsContainer");
+
+function renderProjects(){
+
+    projectsContainer.innerHTML="";
+
+    projects.forEach(project=>{
+
+        projectsContainer.innerHTML += `
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img src="${project.image}">
+
+                <span class="project-status">
+
+                    ${project.status}
+
+                </span>
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-top">
+
+                    <span>
+
+                        ${project.category}
+
+                    </span>
+
+                    <p>
+
+                        ${project.year}
+
+                    </p>
+
+                </div>
+
+                <h3>
+
+                    ${project.title}
+
+                </h3>
+
+                <p>
+
+                    ${project.description}
+
+                </p>
+
+                <div class="stack">
+
+                    ${project.technologies.map(tech=>`
+
+                        <span>${tech}</span>
+
+                    `).join("")}
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a href="${project.github}">
+
+                        GitHub
+
+                    </a>
+
+                    <a href="${project.demo}">
+
+                        Live
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        `;
+
+    });
+
+}
+
+renderProjects();
+
+
+
+
+
+
+
+
 console.log("app.js loaded");
 
 
