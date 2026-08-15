@@ -42,7 +42,7 @@ const projects: Project[] = [
     summary: "One calm digital doorway to the services people need across Morocco.",
     challenge: "Turn a wide and complex service ecosystem into an experience that feels immediate, familiar and trustworthy.",
     outcome: "A modular platform architecture, a clear service-discovery journey and a visual language designed to grow without losing coherence.",
-    stack: ["React", "Node.js", "Express", "MongoDB"],
+    stack: ["React", "Node.js", "Express.js", "PostgreSQL"],
     link: "https://www.rifkando.com",
     tone: "coral",
     cover: asset("/images/projects/rifkando/rifKANDOHomePage.png"),
@@ -235,14 +235,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="learning-archive section-pad" id="education">
+      <section className="learning-archive section-pad" id="credentials">
         <div className="section-intro reveal"><div><span className="section-number">03</span><p>Credentials archive</p></div><h2>Evidence of learning.<br /><em>Presented with care.</em></h2><p>Professional certificates and academic study, collected as original records you can explore in full.</p></div>
         <div className="archive-columns reveal">
           <div className="archive-column" id="certificates">
             <div className="archive-heading"><span>01</span><div><p>Certificates</p><small>Professional learning</small></div></div>
             {certificates.map((item) => <button className="archive-card" key={item.title} onClick={() => setActiveArchiveItem(item)}><img src={item.image} alt={`${item.title} preview`} /><span className="archive-card-copy"><small>{item.category}</small><strong>{item.title}</strong><p>{item.summary}</p><em>View certificate <Arrow /></em></span></button>)}
           </div>
-          <div className="archive-column education-column">
+          <div className="archive-column education-column" id="education">
             <div className="archive-heading"><span>02</span><div><p>Education</p><small>Academic record</small></div></div>
             {education.map((item) => <button className="archive-card" key={item.title} onClick={() => setActiveArchiveItem(item)}><img src={item.image} alt={`${item.title} preview`} /><span className="archive-card-copy"><small>{item.category}</small><strong>{item.title}</strong><p>{item.summary}</p><em>View document <Arrow /></em></span></button>)}
           </div>
@@ -260,7 +260,7 @@ export default function Home() {
             <button className="submit-button" type="submit"><span>{sent ? "Message prepared" : "Send the brief"}</span><Arrow /></button>
             {sent && <p className="form-success" role="status">Thank you. This demo is ready to connect to your preferred email or form service.</p>}
           </form>
-          <aside><p>Prefer a direct note?</p><a href="mailto:hello@choukti.dev">hello@choukti.dev <Arrow diagonal /></a><div className="contact-facts"><div><small>Based in</small><strong>Morocco</strong></div><div><small>Working with</small><strong>People worldwide</strong></div><div><small>Response</small><strong>Usually within 48h</strong></div></div><blockquote>“Good work begins with a clear conversation.”</blockquote></aside>
+          <aside><p>Prefer a direct note?</p><a href="mailto:abdelouahedchoukti@gmail.com">abdelouahedchoukti@gmail.com</a><div className="contact-facts"><div><small>Based in</small><strong>Morocco</strong></div><div><small>Working with</small><strong>People worldwide</strong></div><div><small>Response</small><strong>Usually within 48h</strong></div></div><blockquote>“Good work begins with a clear conversation.”</blockquote></aside>
         </div>
       </section>
 
