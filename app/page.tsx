@@ -31,6 +31,8 @@ type ArchiveItem = {
   note?: string;
 };
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 const projects: Project[] = [
   {
     title: "rifKANDO",
@@ -43,10 +45,10 @@ const projects: Project[] = [
     stack: ["React", "Node.js", "Express", "MongoDB"],
     link: "https://www.rifkando.com",
     tone: "coral",
-    cover: "/images/projects/rifkando/rifKANDOHomePage.png",
+    cover: asset("/images/projects/rifkando/rifKANDOHomePage.png"),
     screens: [
-      { name: "Home page", note: "A focused entry point for every essential service.", image: "/images/projects/rifkando/rifKANDOHomePage.png" },
-      { name: "Products", note: "Trust, clarity and next steps in one composed view.", image: "/images/projects/rifkando/rifKANDOproducts.png" },
+      { name: "Home page", note: "A focused entry point for every essential service.", image: asset("/images/projects/rifkando/rifKANDOHomePage.png") },
+      { name: "Products", note: "Trust, clarity and next steps in one composed view.", image: asset("/images/projects/rifkando/rifKANDOproducts.png") },
       { name: "Request flow", note: "A frictionless path from intent to action." },
     ],
     journey: [
@@ -112,8 +114,8 @@ const certificates: ArchiveItem[] = [
     title: "The Complete Full-Stack Web Development Bootcamp",
     institution: "Professional learning certificate",
     category: "Certificate",
-    image: "/images/certificates/TheCompleteFullStackWebDevelopmentBootcampCertificate.jpg",
-    pdf: "/images/certificates/The Complete FullStack Web Development Certificate.pdf",
+    image: asset("/images/certificates/TheCompleteFullStackWebDevelopmentBootcampCertificate.jpg"),
+    pdf: asset("/images/certificates/The Complete FullStack Web Development Certificate.pdf"),
     summary: "A documented milestone in full-stack web development.",
   },
 ];
@@ -123,8 +125,8 @@ const education: ArchiveItem[] = [
     title: "DEUG - Etudes Anglaises",
     institution: "Higher education record",
     category: "Education",
-    image: "/images/education/DEUGEtudesAnglaises.png",
-    pdf: "/images/education/DEUG_Etudes_Anglaises.pdf",
+    image: asset("/images/education/DEUGEtudesAnglaises.png"),
+    pdf: asset("/images/education/DEUG_Etudes_Anglaises.pdf"),
     summary: "Academic studies in English, presented with the original certificate and document.",
   },
 ];
@@ -220,7 +222,7 @@ export default function Home() {
 
       <section className="about section-pad" id="about">
         <div className="about-grid reveal">
-          <div className="portrait-card"><img className="portrait-image" src="/images/profile1.png" alt="Abdelouahed Choukti" /><span className="portrait-label">Builder · thinker · learner</span></div>
+          <div className="portrait-card"><img className="portrait-image" src={asset("/images/profile1.png")} alt="Abdelouahed Choukti" /><span className="portrait-label">Builder · thinker · learner</span></div>
           <div className="about-copy"><span className="section-number">02 — About</span><h2>Engineering with<br /><em>taste and intention.</em></h2><p className="about-lead">The best software disappears into the confidence it gives people.</p><p>I work across interface, backend and data—connecting the details into one coherent product. I care about what a system does, how it feels, and whether it will still make sense as it grows.</p><div className="principles"><div><span>01</span><strong>Clarity over noise</strong></div><div><span>02</span><strong>Systems over patches</strong></div><div><span>03</span><strong>Meaning over decoration</strong></div></div></div>
         </div>
         <div className="capabilities reveal"><p>What I bring</p><div className="cap-grid"><article><span>01</span><h3>Product-minded development</h3><p>I connect technical decisions to user needs and business value.</p></article><article><span>02</span><h3>Frontend with feeling</h3><p>Responsive interfaces with polish, pace and purposeful interaction.</p></article><article><span>03</span><h3>Backends built to grow</h3><p>Clear APIs, durable data models and maintainable architecture.</p></article><article><span>04</span><h3>Relentless learning</h3><p>Curiosity that turns new tools into better ways to solve real problems.</p></article></div></div>
