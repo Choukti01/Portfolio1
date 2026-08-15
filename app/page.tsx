@@ -63,20 +63,20 @@ const projects: Project[] = [
     year: "2026",
     status: "Prototype",
     summary: "A smarter way to reach Morocco’s airports, from wherever the journey begins.",
-    challenge: "Airport travel is rarely one route. Travellers need to compare time, transfers and confidence—not just distance.",
+    challenge: "Airport travel is rarely one route. Travellers need to compare time, transfers and confidence, not just distance.",
     outcome: "A transport recommendation experience that translates a complicated journey into a few confident choices.",
     stack: ["Vue", "JavaScript", "CSS", "Travel data"],
     link: "https://github.com/Choukti01/FlyIn",
     tone: "azure",
     screens: [
-      { name: "Trip brief", note: "Destination, departure and priorities—nothing more." },
+      { name: "Trip brief", note: "Destination, departure and priorities, nothing more." },
       { name: "Route theatre", note: "A visual comparison of the strongest transport options." },
       { name: "Journey plan", note: "Every connection presented as a calm, readable sequence." },
     ],
     journey: [
       { step: "01", title: "Frame the decision", copy: "Studied the information travellers actually need before choosing a route." },
       { step: "02", title: "Model the options", copy: "Structured multi-stage transport choices around time, effort and reliability." },
-      { step: "03", title: "Reduce uncertainty", copy: "Designed each recommendation to explain why it fits—not simply rank it." },
+      { step: "03", title: "Reduce uncertainty", copy: "Designed each recommendation to explain why it fits, not simply rank it." },
     ],
   },
   {
@@ -197,7 +197,7 @@ export default function Home() {
         <p className="eyebrow reveal">Software engineering · Digital craft</p>
         <h1 className="reveal">I turn complex<br />ideas into <em>clear,</em><br /><span>living products.</span></h1>
         <div className="hero-bottom reveal">
-          <p>I’m Abdelouahed Choukti—an engineer crafting thoughtful interfaces, scalable systems and digital experiences with a reason to exist.</p>
+          <p>I’m Abdelouahed Choukti, an engineer crafting thoughtful interfaces, scalable systems and digital experiences with a reason to exist.</p>
           <a className="round-link" href="#work" aria-label="Explore selected work"><span>Explore<br />the work</span><Arrow /></a>
         </div>
         <div className="hero-line"><span>Scroll to enter</span><i /></div>
@@ -223,13 +223,13 @@ export default function Home() {
       <section className="about section-pad" id="about">
         <div className="about-grid reveal">
           <div className="portrait-card"><img className="portrait-image" src={asset("/images/profile1.png")} alt="Abdelouahed Choukti" /><span className="portrait-label">Builder · thinker · learner</span></div>
-          <div className="about-copy"><span className="section-number">02 — About</span><h2>Engineering with<br /><em>taste and intention.</em></h2><p className="about-lead">The best software disappears into the confidence it gives people.</p><p>I work across interface, backend and data—connecting the details into one coherent product. I care about what a system does, how it feels, and whether it will still make sense as it grows.</p><div className="principles"><div><span>01</span><strong>Clarity over noise</strong></div><div><span>02</span><strong>Systems over patches</strong></div><div><span>03</span><strong>Meaning over decoration</strong></div></div></div>
+          <div className="about-copy"><span className="section-number">02 About</span><h2>Engineering with<br /><em>taste and intention.</em></h2><p className="about-lead">The best software disappears into the confidence it gives people.</p><p>I work across interface, backend and data, connecting the details into one coherent product. I care about what a system does, how it feels, and whether it will still make sense as it grows.</p><div className="principles"><div><span>01</span><strong>Clarity over noise</strong></div><div><span>02</span><strong>Systems over patches</strong></div><div><span>03</span><strong>Meaning over decoration</strong></div></div></div>
         </div>
         <div className="capabilities reveal"><p>What I bring</p><div className="cap-grid"><article><span>01</span><h3>Product-minded development</h3><p>I connect technical decisions to user needs and business value.</p></article><article><span>02</span><h3>Frontend with feeling</h3><p>Responsive interfaces with polish, pace and purposeful interaction.</p></article><article><span>03</span><h3>Backends built to grow</h3><p>Clear APIs, durable data models and maintainable architecture.</p></article><article><span>04</span><h3>Relentless learning</h3><p>Curiosity that turns new tools into better ways to solve real problems.</p></article></div></div>
       </section>
 
       <section className="certificates section-pad" id="certificates-legacy">
-        <div className="section-intro reveal"><div><span className="section-number">03</span><p>Learning archive</p></div><h2>Proof of practice.<br /><em>A journey in progress.</em></h2><p>Each certificate marks a capability earned—and a new layer added to the craft.</p></div>
+        <div className="section-intro reveal"><div><span className="section-number">03</span><p>Learning archive</p></div><h2>Proof of practice.<br /><em>A journey in progress.</em></h2><p>Each certificate marks a capability earned, and a new layer added to the craft.</p></div>
         <div className="certificate-list reveal">
           {certificates.map((certificate) => <button key={certificate.title} onClick={() => setActiveCertificate(certificate)}><span className="cert-seal">{certificate.seal}</span><span><small>{certificate.issuer} · {certificate.year}</small><strong>{certificate.title}</strong></span><span className="cert-note">{certificate.note}</span><Arrow /></button>)}
         </div>
@@ -250,7 +250,7 @@ export default function Home() {
       </section>
 
       <section className="contact section-pad" id="contact">
-        <div className="contact-heading reveal"><span className="section-number">04 — Start a conversation</span><h2>Have an idea with<br /><em>real potential?</em></h2><p>Tell me what you’re building, what is getting in the way, or simply where you want to go next.</p></div>
+        <div className="contact-heading reveal"><span className="section-number">04 Start a conversation</span><h2>Have an idea with<br /><em>real potential?</em></h2><p>Tell me what you’re building, what is getting in the way, or simply where you want to go next.</p></div>
         <div className="contact-grid reveal">
           <form onSubmit={submitForm}>
             <div className="field"><label htmlFor="name">Your name</label><input id="name" name="name" required placeholder="How should I call you?" /></div>
