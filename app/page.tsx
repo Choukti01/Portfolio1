@@ -36,25 +36,25 @@ const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//
 const projects: Project[] = [
   {
     title: "rifKANDO",
-    label: "Multi-service platform",
+    label: "Full-stack marketplace",
     year: "2026",
     status: "In development",
-    summary: "One calm digital doorway to the services people need across Morocco.",
-    challenge: "Turn a wide and complex service ecosystem into an experience that feels immediate, familiar and trustworthy.",
-    outcome: "A modular platform architecture, a clear service-discovery journey and a visual language designed to grow without losing coherence.",
+    summary: "A full-stack marketplace where I took ownership beyond feature development.",
+    challenge: "Built React experiences, Node.js APIs, authentication, marketplace workflows, COD and commission logic, plus multilingual RTL support.",
+    outcome: "Performed a security and production-readiness review, fixing authorization, payment callback, upload, privacy, validation, session and financial-integrity risks.",
     stack: ["React", "Node.js", "Express.js", "PostgreSQL"],
     link: "https://www.rifkando.com",
     tone: "coral",
     cover: asset("/images/projects/rifkando/rifKANDOHomePage.png"),
     screens: [
-      { name: "Home page", note: "A focused entry point for every essential service.", image: asset("/images/projects/rifkando/rifKANDOHomePage.png") },
-      { name: "Products", note: "Trust, clarity and next steps in one composed view.", image: asset("/images/projects/rifkando/rifKANDOproducts.png") },
-      { name: "Request flow", note: "A frictionless path from intent to action." },
+      { name: "Home page", note: "A React marketplace experience designed around a clear, trustworthy entry point.", image: asset("/images/projects/rifkando/rifKANDOHomePage.png") },
+      { name: "Products", note: "Marketplace workflows, COD and commission logic connected to a practical buying experience.", image: asset("/images/projects/rifkando/rifKANDOproducts.png") },
+      { name: "Trusted operations", note: "Multilingual RTL support, secure sessions and production-ready marketplace behaviour." },
     ],
     journey: [
-      { step: "01", title: "Map the ecosystem", copy: "Grouped services around real user intent rather than internal categories." },
-      { step: "02", title: "Build for trust", copy: "Made status, expectations and provider context visible at each decision." },
-      { step: "03", title: "Design to scale", copy: "Created reusable patterns so new services can join without fragmenting the experience." },
+      { step: "01", title: "Build the marketplace", copy: "Took ownership of the React experiences, Node.js APIs, authentication and marketplace workflows." },
+      { step: "02", title: "Protect user trust", copy: "Reviewed and fixed authorization, payment callback, upload, privacy, validation, session and financial-integrity risks." },
+      { step: "03", title: "Prepare for production", copy: "Added CI quality gates, automated tests, operational logging, feature flags and PostgreSQL migration preparation." },
     ],
   },
   {
@@ -144,7 +144,7 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
       <div className="visual-orbit orbit-two" />
       <div className="visual-core"><small>Selected work</small><strong>{project.title}</strong><span>{project.year}</span></div>
       <div className="visual-panel panel-a"><i /><i /><i /><b>{project.screens[0].name}</b></div>
-      <div className="visual-panel panel-b"><span>◆</span><b>{project.stack[0]}</b></div>
+      <div className="visual-panel panel-b"><span>◆</span><b>{project.title === "rifKANDO" ? "Marketplace" : project.stack[0]}</b></div>
       <div className="visual-grid" />
     </div>
   );
