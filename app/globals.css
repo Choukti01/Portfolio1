@@ -24,4 +24,5 @@ body>main>footer{padding:56px 4vw;background:var(--ink);color:var(--paper);displ
 @media(max-width:900px){.archive-columns{grid-template-columns:1fr}.archive-card>img{height:360px}}
 @media(max-width:600px){.archive-columns{gap:16px}.archive-column{padding:14px}.archive-card>img{height:250px}.archive-card-copy strong{font-size:34px}.archive-modal{width:100%;min-height:100vh;padding:85px 20px 30px}.archive-modal-heading{padding-right:55px}.archive-actions{flex-direction:column}.archive-actions a{text-align:center}}
 @media(max-width:600px){body>main>footer{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px}.footer-brand,body>main>footer>div{justify-self:auto;justify-content:center}body>main>footer>p{order:2;white-space:normal}body>main>footer>div{order:3}}
+.form-honeypot{position:absolute;left:-9999px;opacity:0;pointer-events:none}.submit-button:disabled{cursor:wait;opacity:.72}.form-error{color:#9b3327}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}

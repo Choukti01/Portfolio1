@@ -155,7 +155,7 @@ export default function Home() {
   const [activeCertificate, setActiveCertificate] = useState<any>(null);
   const [activeArchiveItem, setActiveArchiveItem] = useState<ArchiveItem | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [formState, setFormState] = useState<"idle" | "submitting" | "sent" | "error">("idle");
   const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -173,10 +173,22 @@ export default function Home() {
     return () => { window.removeEventListener("keydown", close); document.body.style.overflow = ""; };
   }, [activeProject, activeCertificate, activeArchiveItem]);
 
-  function submitForm(event: FormEvent<HTMLFormElement>) {
+  async function submitForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSent(true);
-    event.currentTarget.reset();
+    const form = event.currentTarget;
+    setFormState("submitting");
+    try {
+      const response = await fetch("https://formspree.io/f/mppaygjv", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!response.ok) throw new Error("Form submission failed");
+      form.reset();
+      setFormState("sent");
+    } catch {
+      setFormState("error");
+    }
   }
 
   const closeMenu = () => setMenuOpen(false);
@@ -252,13 +264,16 @@ export default function Home() {
       <section className="contact section-pad" id="contact">
         <div className="contact-heading reveal"><span className="section-number">04 Start a conversation</span><h2>Have an idea with<br /><em>real potential?</em></h2><p>Tell me what you’re building, what is getting in the way, or simply where you want to go next.</p></div>
         <div className="contact-grid reveal">
-          <form onSubmit={submitForm}>
+          <form action="https://formspree.io/f/mppaygjv" method="POST" onSubmit={submitForm}>
+            <input type="hidden" name="_subject" value="New portfolio enquiry" />
+            <input className="form-honeypot" type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <div className="field"><label htmlFor="name">Your name</label><input id="name" name="name" required placeholder="How should I call you?" /></div>
             <div className="field"><label htmlFor="email">Email address</label><input id="email" name="email" type="email" required placeholder="you@company.com" /></div>
             <div className="field"><label htmlFor="project">What are we creating?</label><select id="project" name="project" defaultValue=""><option value="" disabled>Select a direction</option><option>New digital product</option><option>Portfolio or web experience</option><option>Frontend engineering</option><option>Backend or API system</option><option>Something else</option></select></div>
             <div className="field"><label htmlFor="message">The heart of the idea</label><textarea id="message" name="message" required rows={4} placeholder="A little context, the ambition, and where you need help…" /></div>
-            <button className="submit-button" type="submit"><span>{sent ? "Message prepared" : "Send the brief"}</span><Arrow /></button>
-            {sent && <p className="form-success" role="status">Thank you. This demo is ready to connect to your preferred email or form service.</p>}
+            <button className="submit-button" type="submit" disabled={formState === "submitting"}><span>{formState === "submitting" ? "Sending your brief..." : formState === "sent" ? "Brief sent" : "Send the brief"}</span><Arrow /></button>
+            {formState === "sent" && <p className="form-success" role="status">Thank you. Your brief has been sent successfully. I will get back to you soon.</p>}
+            {formState === "error" && <p className="form-success form-error" role="alert">Something went wrong. Please email me directly at abdelouahedchoukti@gmail.com.</p>}
           </form>
           <aside><p>Prefer a direct note?</p><a href="mailto:abdelouahedchoukti@gmail.com">abdelouahedchoukti@gmail.com</a><div className="contact-facts"><div><small>Based in</small><strong>Morocco</strong></div><div><small>Working with</small><strong>People worldwide</strong></div><div><small>Response</small><strong>Usually within 48h</strong></div></div><blockquote>“Good work begins with a clear conversation.”</blockquote></aside>
         </div>
