@@ -122,12 +122,12 @@ const certificates: ArchiveItem[] = [
 
 const education: ArchiveItem[] = [
   {
-    title: "DEUG - Etudes Anglaises",
-    institution: "Higher education record",
+    title: "DEUG in English Studies",
+    institution: "Higher education qualification",
     category: "Education",
     image: asset("/images/education/DEUGEtudesAnglaises.png"),
     pdf: asset("/images/education/DEUG_Etudes_Anglaises.pdf"),
-    summary: "Academic studies in English, presented with the original certificate and document.",
+    summary: "English Studies qualification, presented with the original certificate and academic document.",
   },
 ];
 
